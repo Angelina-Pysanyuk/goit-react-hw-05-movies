@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { requestMoviesById } from 'api_service/api';
 import { BackLink } from 'components/BackLink/BackLink';
