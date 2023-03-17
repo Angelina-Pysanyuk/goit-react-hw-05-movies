@@ -37,9 +37,7 @@ const Movies = () => {
   return (
     <>
       <SearchForm onSubmit={handleFormSubmit} />
-      {searchedMovies.length > 0 && (
-        <MovieList searchedMovies={searchedMovies} />
-      )}
+      {searchedMovies.length > 0 && <MovieList moviesList={searchedMovies} />}
     </>
   );
 };

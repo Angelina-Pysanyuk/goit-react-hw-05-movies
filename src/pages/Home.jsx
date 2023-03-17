@@ -1,8 +1,7 @@
-import HomeComp from 'components/Home/HomeComp';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { requestTrendingMovies } from 'api_service/api';
-
+import MovieList from 'components/MovieList/MovieList';
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
 
@@ -21,7 +20,7 @@ const Home = () => {
   return (
     <>
       {trendingMovies.length > 0 ? (
-        <HomeComp trendingMovies={trendingMovies} />
+        <MovieList moviesList={trendingMovies} title="Trending today" />
       ) : (
         <p>Something went wrong, try to reload the page.</p>
       )}

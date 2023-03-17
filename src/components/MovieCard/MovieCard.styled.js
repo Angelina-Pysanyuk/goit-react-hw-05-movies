@@ -9,6 +9,7 @@ export const StyledSection = styled.section`
   box-shadow: 0px 3px 3px #d6d6d6;
   & img {
     width: 300px;
+    height: 100%;
   }
   & h2 {
     color: #850000;

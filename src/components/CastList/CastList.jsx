@@ -1,5 +1,6 @@
 import React from 'react';
 import { CastSection, ActorList, ActorInfo } from './CastList.styled';
+import AvatarEmpty from '../../images/avatar-empty.png';
 
 const CastList = ({ castMembers }) => {
   return (
@@ -8,19 +9,14 @@ const CastList = ({ castMembers }) => {
         {castMembers.map(castMember => {
           return (
             <li key={castMember.id}>
-              {castMember.profile_path === null ? (
-                <img
-                  src="../../images/avatar_empty.png"
-                  alt="avatar_empty"
-                  width="150"
-                />
-              ) : (
-                <img
-                  src={`https://image.tmdb.org/t/p/original/${castMember.profile_path}`}
-                  alt={castMember.character}
-                  width="150"
-                />
-              )}
+              <img
+                src={
+                  castMember.profile_path
+                    ? `https://image.tmdb.org/t/p/original/${castMember.profile_path}`
+                    : AvatarEmpty
+                }
+                alt="castMember.name"
+              />
               <ActorInfo>
                 <h3>{castMember.name}</h3>
                 <p>

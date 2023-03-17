@@ -15,6 +15,7 @@ export const ActorList = styled.ul`
     flex-direction: column;
     justify-content: space-between;
     width: calc((100% - 36px) / 4);
+    min-width: 200px;
     border-radius: 5px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -38,7 +39,6 @@ export const ActorList = styled.ul`
 
 export const ActorInfo = styled.div`
   box-sizing: border-box;
-  height: 90px;
   padding: 20px 12px;
   text-align: center;
 `;
