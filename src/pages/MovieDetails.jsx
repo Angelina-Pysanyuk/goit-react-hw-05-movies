@@ -1,11 +1,8 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { Route, Routes, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { requestMoviesById } from 'api_service/api';
 import { BackLink } from 'components/BackLink/BackLink';
 import MovieCard from 'components/MovieCard/MovieCard';
-
-const Cast = lazy(() => import('./Cast'));
-const Reviews = lazy(() => import('./Reviews'));
 
 const MovieDetails = () => {
   const { id: movieId } = useParams();
@@ -28,14 +25,10 @@ const MovieDetails = () => {
   return (
     <>
       <BackLink to={location?.state?.from ?? '/'}>⬅ Go back</BackLink>
+
       <MovieCard movie={movie} />
 
-      <Suspense>
-        <Routes>
-          <Route path="cast" element={<Cast />}></Route>
-          <Route path="reviews" element={<Reviews />}></Route>
-        </Routes>
-      </Suspense>
+      <Outlet />
     </>
   );
 };

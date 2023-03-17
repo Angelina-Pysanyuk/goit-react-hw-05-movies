@@ -37,11 +37,8 @@ const Movies = () => {
   return (
     <>
       <SearchForm onSubmit={handleFormSubmit} />
-
-      {searchedMovies.length > 0 ? (
+      {searchedMovies.length > 0 && (
         <MovieList searchedMovies={searchedMovies} />
-      ) : (
-        <p>Sorry, there is no such film. Try different query.</p>
       )}
     </>
   );
