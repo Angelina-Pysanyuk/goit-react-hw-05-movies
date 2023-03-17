@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledLink = styled(Link)`
   display: inline-flex;
@@ -21,4 +22,9 @@ const StyledLink = styled(Link)`
 
 export const BackLink = ({ to, children }) => {
   return <StyledLink to={to}>{children}</StyledLink>;
+};
+
+BackLink.propTypes = {
+  to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  children: PropTypes.node,
 };
